@@ -1,0 +1,13 @@
+<div class="form-group">
+    <div class="row">
+      <div class="col-md-11">
+        <input class="form-control" placeholder="Search" type="text" ng-keypress="$ctrl.keypress($event)" ng-model="$ctrl.q" ></input>
+      </div>
+      <div class="col-md-1">
+        <button class="btn btn-primary" ng-click="$ctrl.click()">Search</button>
+      </div>
+  </div>
+</div>
+
+<result search="$ctrl.query"></result>
+

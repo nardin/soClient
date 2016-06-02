@@ -1,0 +1,16 @@
+<div>
+    <user 
+        name="$ctrl.user.display_name" 
+        link="$ctrl.user.link"
+        image="$ctrl.user.profile_image"
+        badge="$ctrl.user.badge_counts" /> 
+</div>
+<div class="row">
+    <table class="table table-hover">
+        <tr ng-repeat="question in $ctrl.questions">
+            <td class="col-md-12">
+                <a ng-href="#/question/{{question.question_id}}">{{question.title}}</a>
+            </td>
+        </tr>
+    </table>
+</div

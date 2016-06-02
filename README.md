@@ -1,1 +1,6 @@
-# soClient
+# stackoverflow client
+	* npm install 
+	* npm start
+
+
+	localhost:8080

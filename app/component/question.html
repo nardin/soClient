@@ -1,0 +1,21 @@
+<div class="row">
+     <div class="col-md-3">
+        <user 
+            name="$ctrl.question.owner.display_name" 
+            link="$ctrl.question.owner.link"
+            image="$ctrl.question.owner.profile_image"
+            badge="$ctrl.question.owner.badge_counts" />
+    </div>
+    <div class="col-md-9">
+        <h2>{{$ctrl.question.title}}</h2>
+        <div ng-bind-html="$ctrl.body" class="row"></div>
+        <table class="table table-hover">
+            <tr ng-repeat="answer in $ctrl.answers">
+                <td class="row">
+                    <answer data="answer"> </answer>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</div>

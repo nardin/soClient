@@ -1,0 +1,56 @@
+<p>Result: <span>{{$ctrl.search}}</span></p>
+
+<div class="row">
+    <div ng-class="$ctrl.display_quickmenu ? 'col-md-9' : 'col-md-12'">
+      <table class="table table-hover">
+          <tr ng-repeat="row in $ctrl.result.items">
+            <td class="col-md-1" ng-click="toQuestion(row.question_id)">
+              <div class="row text-center">
+                {{row.score}}
+              </div>
+              <div class="row text-center">
+                  votes
+              </div> 
+            </td>
+            <td ng-class="row.is_answered ? 'success' : ''" class="col-md-1 " ng-click="toQuestion(row.question_id)">
+              <div class="row text-center">
+                {{row.answer_count}}
+              </div>
+              <div class="row text-center">
+                  answer
+              </div> 
+            </td>
+            <td class="col-md-1" ng-click="toQuestion(row.question_id)">
+              <div class="row text-center">
+                {{row.view_count}}
+              </div>
+              <div class="row text-center">
+                  views
+              </div> 
+            </td>
+            <td class="col-md-8">
+              <a class="row" ng-click="$ctrl.toQuestion(row.question_id)">
+                {{row.title}}
+              </a>
+              <div class="row">
+                  <div class="col-md-9">
+                    <span ng-repeat="tag in row.tags" class="btn btn-default btn-xs" ng-click="$ctrl.showTag(tag)">
+                      {{tag}}
+                    </span>  
+                  </div>
+              </div>
+            </td>
+            <td>
+              <a class="row" ng-click="$ctrl.showUser(row.owner.user_id)">
+                <img class="img-thumbnail img-responsive" src="{{row.owner.profile_image}}" />
+              </a>
+            </td>
+        </tr>
+      </table>
+    <!--<pagging></pagging>-->
+    </div>
+    <div ng-class="$ctrl.display_quickmenu ? 'col-md-3' : 'hidden'">
+        <button class="btn btn-default" ng-click="$ctrl.hideQuickmenu()">Close</button>
+        <quickmenu type="$ctrl.quickmenu.type" id="$ctrl.eid"></quickmenu>
+    </div>
+</div>
